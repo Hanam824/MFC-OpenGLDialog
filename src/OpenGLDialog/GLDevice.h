@@ -6,19 +6,19 @@ class CGLDevice
 {
 public:
 	CGLDevice();
-	CGLDevice(const HDC& deviceContext, int stencil = 0);
-	CGLDevice(const HWND& window, int stencil = 0);
+	CGLDevice(const HDC& deviceContext);
+	CGLDevice(const HWND& window);
 	virtual ~CGLDevice();
 
 	void destroy();
 
-	bool create(const HDC& deviceContext, int  stencil = 0);
-	bool create(const HWND& window, int stencil = 0);
+	bool create(const HDC& deviceContext);
+	bool create(const HWND& window);
 	
 	void makeCurrent(bool disableOther = true);
 
 protected:
-	bool setDCPixelFormat(const HDC& deviceContext, int stencil);
+	bool setDCPixelFormat(const HDC& deviceContext);
 
 	HGLRC renderContext;
 	HDC deviceContext;
